@@ -34,7 +34,6 @@ CUDA_VISIBLE_DEVICES=0 python main_large.py dataset=arxiv  model=gcn  model.json
 ## Citation
 If you find this code useful, please consider citing the following paper.
 ```
-BibTeX Record
 @inproceedings{
 shi2023lmc,
 title={{LMC}: Fast Training of {GNN}s via Subgraph Sampling with Provable Convergence},
