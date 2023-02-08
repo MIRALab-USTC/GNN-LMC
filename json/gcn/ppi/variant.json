@@ -1,0 +1,50 @@
+{
+    "model": {
+        "name": "GCN",
+        "json": null,
+        "rm1hop": false,
+        "norm": true,
+        "loop": true,
+        "partition": "metis",
+        "params": {
+            "architecture": {
+                "num_layers": 2,
+                "hidden_channels": 1024,
+                "dropout": 0.0,
+                "drop_input": false,
+                "batch_norm": true,
+                "bn_name": "BatchNorm1d",
+                "residual": true,
+                "linear": true,
+                "compensate": true,
+                "beta": 0.8
+            },
+            "random_dp": false,
+            "random_dp_prob": 1.0,
+            "update_grad": false,
+            "savegrad": false,
+            "prehist": false,
+            "merge_cluster": true,
+            "score_func_name": "convex",
+            "accumulation_steps": 1,
+            "num_parts": 20,
+            "batch_size": 2,
+            "max_steps": 10,
+            "pool_size": 2,
+            "num_workers": 0,
+            "lr": 0.005,
+            "lr_reduce_factor": 0.5,
+            "lr_schedule_patience": 10000,
+            "reg_weight_decay": 0.0,
+            "nonreg_weight_decay": 0.0,
+            "grad_norm": null,
+            "epochs": 1000,
+            "runs": 5,
+            "optimizer_name": "Adam"
+        }
+    },
+    "dataset": {
+        "name": "ppi"
+    },
+    "log_every": 1
+}

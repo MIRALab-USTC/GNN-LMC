@@ -1,0 +1,49 @@
+{
+    "model": {
+        "name": "GCN",
+        "norm": true,
+        "loop": true,
+        "partition": "metis",
+        "rm1hop": false,
+        "params": {
+            "architecture": {
+                "num_layers": 3,
+                "hidden_channels": 256,
+                "dropout": 0.5,
+                "drop_input": false,
+                "batch_norm": true,
+                "bn_name": "DoubleBN",
+                "residual": false,
+                "linear": false,
+                "compensate": true,
+                "beta": 1.0
+            },
+            "random_dp": false,
+            "random_dp_prob": 1.0,
+            "update_grad": false,
+            "savegrad": false,
+            "prehist": true,
+            "merge_cluster": true,
+            "score_func_name": "const",
+            "accumulation_steps": 1,
+            "num_parts": 80,
+            "batch_size": 40,
+            "max_steps": 2,
+            "pool_size": 2,
+            "num_workers": 0,
+            "lr": 0.01,
+            "lr_reduce_factor": 0.5,
+            "lr_schedule_patience": 10000,
+            "reg_weight_decay": 0,
+            "nonreg_weight_decay": 0,
+            "grad_norm": "none",
+            "epochs": 300,
+            "runs": 5,
+            "optimizer_name": "Adam"
+        }
+    },
+    "dataset": {
+        "name": "arxiv"
+    },
+    "log_every": 1
+}

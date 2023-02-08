@@ -1,0 +1,249 @@
+# @package _group_
+name: GCN
+json: null
+rm1hop: false
+norm: true
+loop: true
+partition: 'random_subgraph'
+params:
+
+  reddit:
+    architecture:
+      num_layers: 2
+      hidden_channels: 256
+      dropout: 0.5
+      drop_input: false
+      batch_norm: false
+      bn_name: 'BatchNorm1d'
+      residual: false
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 200
+    batch_size: 100
+    max_steps: 2
+    pool_size: 2
+    num_workers: 0
+    lr: 0.01
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0.0
+    nonreg_weight_decay: 0.0
+    grad_norm: none
+    epochs: 400
+    runs: 1
+    optimizer_name: 'Adam'
+
+  ppi:
+    architecture:
+      num_layers: 2
+      hidden_channels: 1024
+      dropout: 0.0
+      drop_input: false
+      batch_norm: true
+      bn_name: 'BatchNorm1d'
+      residual: true
+      linear: true
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 20
+    batch_size: 2
+    max_steps: 10
+    pool_size: 2
+    num_workers: 0
+    lr: 0.005
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0.0
+    nonreg_weight_decay: 0.0
+    grad_norm: null
+    epochs: 1000
+    runs: 1
+    optimizer_name: 'Adam'
+
+  flickr:
+    architecture:
+      num_layers: 2
+      hidden_channels: 256
+      dropout: 0.3
+      drop_input: true
+      batch_norm: true
+      bn_name: 'BatchNorm1d'
+      residual: false
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 24
+    batch_size: 12
+    max_steps: 2
+    pool_size: 2
+    num_workers: 0
+    lr: 0.01
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0
+    nonreg_weight_decay: 0
+    grad_norm: null
+    epochs: 400
+    runs: 1
+    optimizer_name: 'Adam'
+
+  yelp:
+    architecture:
+      num_layers: 2
+      hidden_channels: 512
+      dropout: 0.0
+      drop_input: false
+      batch_norm: false
+      bn_name: 'BatchNorm1d'
+      residual: true
+      linear: true
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 40
+    batch_size: 5
+    max_steps: 4
+    pool_size: 2
+    num_workers: 0
+    lr: 0.01
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0
+    nonreg_weight_decay: 0
+    grad_norm: null
+    epochs: 500
+    runs: 1
+    optimizer_name: 'Adam'
+
+  amazon:
+    architecture:
+      num_layers: 22
+      hidden_channels: 64
+      dropout: 0.1
+      drop_input: false
+      batch_norm: true
+      bn_name: 'BatchNorm1d'
+      residual: false
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 80
+    batch_size: 80
+    max_steps: 2000
+    pool_size: 2
+    num_workers: 0
+    lr: 0.03
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 300
+    reg_weight_decay: 0
+    nonreg_weight_decay: 0
+    grad_norm: none
+    epochs: 500
+    runs: 1
+    optimizer_name: 'Adam'
+
+  arxiv:
+    architecture:
+      num_layers: 3
+      hidden_channels: 256
+      dropout: 0.5
+      drop_input: false
+      batch_norm: true
+      bn_name: 'BatchNorm1d'
+      residual: false
+      linear: false
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'const'
+    accumulation_steps: 1
+    num_parts: 80
+    batch_size: 40
+    max_steps: 2
+    pool_size: 2
+    num_workers: 0
+    lr: 0.01
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0
+    nonreg_weight_decay: 0
+    grad_norm: none
+    epochs: 300
+    runs: 1
+    optimizer_name: 'Adam'
+
+  products:
+    architecture:
+      num_layers: 3
+      hidden_channels: 256
+      dropout: 0.3
+      drop_input: false
+      batch_norm: false
+      residual: false
+      bn_name: 'BatchNorm1d'
+      compensate: true
+      beta: 1
+    random_dp: false
+    random_dp_prob: 1.0
+    update_grad: false
+    savegrad: false
+    prehist: false
+    merge_cluster: true
+    score_func_name: 'linear'
+    accumulation_steps: 1
+    num_parts: 7
+    batch_size: 1
+    max_steps: 7
+    pool_size: 1
+    num_workers: 0
+    lr: 0.005
+    lr_reduce_factor: 0.5
+    lr_schedule_patience: 10000
+    reg_weight_decay: 0
+    nonreg_weight_decay: 0
+    grad_norm: null
+    epochs: 300
+    runs: 1
+    optimizer_name: 'Adam'

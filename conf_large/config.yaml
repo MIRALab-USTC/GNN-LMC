@@ -1,0 +1,4 @@
+defaults:
+  - model: pna
+  - dataset: flickr
+log_every: 1

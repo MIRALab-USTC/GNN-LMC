@@ -1,0 +1,48 @@
+{
+    "model": {
+        "name": "GCN",
+        "rm1hop": false,
+        "norm": true,
+        "loop": true,
+        "partition": "metis",
+        "params": {
+            "architecture": {
+                "num_layers": 2,
+                "hidden_channels": 256,
+                "dropout": 0.5,
+                "drop_input": false,
+                "batch_norm": false,
+                "bn_name": "DoubleBN",
+                "residual": false,
+                "compensate": true,
+                "beta": 1.0
+            },
+            "random_dp": false,
+            "random_dp_prob": 1.0,
+            "update_grad": false,
+            "savegrad": false,
+            "prehist": false,
+            "merge_cluster": true,
+            "score_func_name": "concave",
+            "accumulation_steps": 1,
+            "num_parts": 200,
+            "batch_size": 100,
+            "max_steps": 2,
+            "pool_size": 2,
+            "num_workers": 0,
+            "lr": 0.01,
+            "lr_reduce_factor": 0.5,
+            "lr_schedule_patience": 10000,
+            "reg_weight_decay": 0.0,
+            "nonreg_weight_decay": 0.0,
+            "grad_norm": "none",
+            "epochs": 400,
+            "runs": 5,
+            "optimizer_name": "Adam"
+        }
+    },
+    "dataset": {
+        "name": "reddit"
+    },
+    "log_every": 1
+}
