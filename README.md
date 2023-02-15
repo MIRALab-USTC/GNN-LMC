@@ -2,7 +2,7 @@
 
 This is the code of paper 
 **LMC: Fast Training of GNNs via Subgraph Sampling with Provable Convergence**. 
-Zhihao Shi, Xize Liang, Jie Wang. ICLR 2023. [[arXiv](https://arxiv.org/abs/2302.00924)]
+*Zhihao Shi, Xize Liang, Jie Wang.* ICLR 2023. [[arXiv](https://arxiv.org/abs/2302.00924)]
 [[ICLR-Official](https://openreview.net/forum?id=5VBBA91N6n)]
 
 ## Dependencies
